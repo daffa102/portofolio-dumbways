@@ -26,7 +26,7 @@ export const projects: Project[] = [
     {
         title: "Aplikasi Cibaduy",
         desc: "Aplikasi absensi internal untuk Cibaduy mencatat kehadiran secara digital, lebih praktis dan rapi dibanding pencatatan manual",
-        techStack: ["flutter", "laravel", "MySQL"],
+        techStack: ["Flutter", "Laravel", "MySQL"],
         featured: false,
         image: "assets/image-project/apk.webp"
     },

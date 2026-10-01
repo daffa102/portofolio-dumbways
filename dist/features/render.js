@@ -4,9 +4,11 @@ export function renderSkills(skills) {
         return;
     }
     const cardsHtml = skills.map((skill) => {
-        const itemHtml = skill.items.map((item) => {
+        const itemHtml = skill.items
+            .map((item) => {
             return `<span class="block bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium px-3 py-2 rounded-lg">${item}</span>`;
-        }).join("");
+        })
+            .join("");
         return `
         <div class="p-6 rounded-3xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex flex-col gap-4 text-left shadow-sm hover:shadow-md transition-shadow">
             <h3 class="text-xl font-bold">${skill.title}</h3>
@@ -49,7 +51,8 @@ export function renderProject(projects) {
         </div>
     </div>
     `;
-    gridContainer.innerHTML = other.map((show) => `
+    gridContainer.innerHTML = other
+        .map((show) => `
     <div class="p-6 md:p-8 rounded-3xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex flex-col gap-4 text-left h-full shadow-sm hover:shadow-md transition-shadow">
         ${imgHtml(show.image, show.title)}
         <h3 class="text-xl font-bold">${show.title}</h3>
@@ -57,14 +60,16 @@ export function renderProject(projects) {
         <div class="flex flex-wrap gap-2">${show.techStack.map(chip).join("")}</div>
         ${textLink(show.link)}
     </div>
-    `).join("");
+    `)
+        .join("");
 }
 export function renderExperience(experiences) {
     const experienceContainer = document.getElementById("experience-container");
     if (!experienceContainer) {
         return;
     }
-    experienceContainer.innerHTML = experiences.map((item) => `
+    experienceContainer.innerHTML = experiences
+        .map((item) => `
     <div class="relative pl-8 flex flex-col gap-2 text-left">
         <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-accent ring-4 ring-white dark:bg-accent-soft dark:ring-slate-900"></span>
         <span class="self-start px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-xs font-semibold text-accent dark:text-accent-soft">${item.year}</span>
@@ -72,6 +77,7 @@ export function renderExperience(experiences) {
         <p class="text-sm font-medium text-slate-500 dark:text-slate-400">${item.place}</p>
         <p class="leading-relaxed text-slate-600 dark:text-slate-300">${item.desc}</p>
     </div>
-    `).join("");
+    `)
+        .join("");
 }
 //# sourceMappingURL=render.js.map

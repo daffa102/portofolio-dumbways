@@ -1,5 +1,4 @@
 export function toggle() {
-    const savedTheme = localStorage.getItem("theme");
     const button = document.getElementById("theme-toggle");
     if (!button) {
         return;
